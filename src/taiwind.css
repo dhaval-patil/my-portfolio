@@ -1,0 +1,16 @@
+primary {
+  color: #f6a64f;
+}
+secondary {
+  color: #b56141;
+}
+background {
+  color: #fffcf8;
+}
+white {
+  color: #fbfbfb;
+}
+
+.gradient-primary {
+  background-color: linear-gradient(to right, #f4a44f, #ac573f);
+}
