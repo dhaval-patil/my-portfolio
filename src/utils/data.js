@@ -25,10 +25,10 @@ import {
   export const MENU_LINKS = [
     { id: "01", label: "Home", offset: -100, to: "hero" },
     { id: "02", label: "About Me", offset: -80, to: "about" },
-    { id: "02", label: "Education", offset: -80, to: "education" },
-    { id: "03", label: "Skills", offset: -80, to: "skills" },
-    { id: "04", label: "Projects", offset: -80, to: "projects" },
-    { id: "05", label: "Contact", offset: -80, to: "contact" },
+    { id: "03", label: "Education", offset: -80, to: "education" },
+    { id: "04", label: "Skills", offset: -80, to: "skills" },
+    { id: "05", label: "Projects", offset: -80, to: "projects" },
+    { id: "06", label: "Contact", offset: -80, to: "contact" },
   ];
   
   export const STATS = [
@@ -272,7 +272,7 @@ import {
     //   live: "#",
     // },
     {
-      id: 3,
+      id: 2,
       title: "Hostel Addmission System",
       image: PROJECT_IMG_2,
       tags: ["HTML", "CSS", "PHP", "MySql"],
