@@ -2,7 +2,11 @@ import React from "react";
 
 const ProjectCard = ({ imgUrl, title, tags, github, live }) => {
   return (
-    <div className="h-full bg-white rounded-xl overflow-hidden shadow-md mx-2">
+    <div
+      data-scroll
+      data-scroll-speed=".04"
+      className="h-full bg-[#00001d] backdrop-blur-sm rounded-xl overflow-hidden shadow-md mx-2"
+    >
       <img
         src={imgUrl}
         alt={title}
@@ -24,17 +28,16 @@ const ProjectCard = ({ imgUrl, title, tags, github, live }) => {
           ))}
         </div>
         <div className="flex justify-center space-x-9 py-3 lg:space-x-25 ">
-          
           <a href={github} target="_blank">
             <button className="action-btn translate-y-4 hover:scale-110 duration-300 ease-in-out cursor-pointer">
               Github
             </button>
           </a>
-          
+
           <a href={live} target="_blank">
-          <button className="action-btn translate-y-4 hover:scale-110 duration-300 ease-in-out cursor-pointer">
-            Live
-          </button>
+            <button className="action-btn translate-y-4 hover:scale-110 duration-300 ease-in-out cursor-pointer">
+              Live
+            </button>
           </a>
         </div>
       </div>

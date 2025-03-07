@@ -21,19 +21,23 @@ const Navbar = () => {
     };
 
     handleResize();
-    window.addEventListener('resize', handleResize);
-    
-    return () =>{
-      window.removeEventListener('resize', handleResize);
-    }
-  },[]);
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <>
-      <nav className="container mx-auto sticky top-5 z-10">
-        <div className="flex item-center justify-between rounded-full bg-white/25 border border-[#fee6cc] backdrop-blur-[10px] m-5 p-3 md:p-0">
+      <nav className="container mx-auto sticky top-5 z-[999]">
+        <div className="flex item-center justify-between rounded-full   backdrop-blur-[10px] m-5 p-3 md:p-0">
           {/* Logo  */}
-          <img className="h-7 ml-6 my-2 -mb-1" src={LOGO} alt="Logo" />
+          <img
+            className="h-7 ml-6 my-2 -mb-1 filter invert brightness-60"
+            src={LOGO}
+            alt="Logo"
+          />
 
           {/* {Hamburger icon {visible only on small screen}} */}
           <button
@@ -66,14 +70,17 @@ const Navbar = () => {
           </button>
 
           {/* Navigation Links */}
-          <ul className={`${isOpen ? "flex" : "hidden"} menu-wrapper text-[16px] text-[#622a13] font-bold`}>
+          <ul
+            className={`${
+              isOpen ? "flex" : "hidden"
+            } menu-wrapper text-[20px] tracking-tighter text-zinc-300 font-bold`}
+          >
             {MENU_LINKS.map((item) => (
               <li key={item.id}>
                 <Link
                   activeClass="active"
                   to={item.to}
                   smooth
-                  spy
                   offset={item.offset}
                   className="menu-item"
                 >

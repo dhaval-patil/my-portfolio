@@ -21,12 +21,19 @@ const MyProject = () => {
   }, [emblaApi, updateScrollButtons]);
 
   return (
-    <section id="projects" className="bg-[#fffcf8] mt-14">
+    <section
+      id="projects"
+      data-scroll
+      data-scroll-speed=".4"
+      className="bg-gradient-to-r from-[#020024] via-[#040451] via-35% via-[#000548] via-54% to-[#01002a] to-100% mt-14 rounded-t-4xl"
+    >
       <div className="container mx-auto px-8 md:px-10 py-10">
         <div className="w-full lg:w-[60vw] mx-auto">
-          <h4 className="section-title text-3xl">Recent Projects</h4>
+          <h4 className="font-[Onest] font-extrabold text-center  text-[10vh]">
+            Recent Projects
+          </h4>
 
-          <p className="text-sm text-center mt-4 leading-6">
+          <p className="text-md text-zinc-300 text-center mt-4 leading-6">
             From concept to deployment, these projects showcase my technical
             expertise. I focus on clean code, performance, and user experience.
           </p>
@@ -45,8 +52,8 @@ const MyProject = () => {
                     imgUrl={project.image}
                     title={project.title}
                     tags={project.tags}
-                    github = {project.github}
-                    live = {project.live}
+                    github={project.github}
+                    live={project.live}
                   />
                 </div>
               ))}
@@ -63,7 +70,7 @@ const MyProject = () => {
           >
             <IoIosArrowForward className="rotate-180" />
           </button>
-          
+
           <button
             className={`arrow-btn cursor-pointer -right-5 ${
               !canScrollPrev ? "opacity-50 cursor-not-allowed" : ""

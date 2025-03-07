@@ -51,7 +51,9 @@ const ContactMe = () => {
     <section id="contact">
       <div className="container mx-auto p-10">
         <div className="w-full lg:w-[60vw] mx-auto ">
-          <h4 className="section-title">Contact Me</h4>
+          <h4 className="text-zinc-300 text-center font-bold text-5xl">
+            Contact Me
+          </h4>
 
           <div className="grid grid-cols-1 md:grid-cols-2 md:gap-16 mt-15">
             <div>
@@ -63,7 +65,7 @@ const ContactMe = () => {
               {/* <ContactInfoCard icon={<MdOutlineWeb />} text={ABOUT_ME.website} /> */}
             </div>
             <div>
-              <h5 className="md:hidden text-[#b56141] text-lg font-medium mt-4 pb-5">
+              <h5 className="md:hidden text-zinc-300 text-lg font-medium mt-4 pb-5">
                 Contact Form
               </h5>
 
