@@ -317,9 +317,8 @@ export const PROJECTS = [
     title: "Personal Portfolio",
     image: PROJECT_IMG_4,
     tags: ["Reactjs", "TailwindCSS"],
-    github:
-      "https://github.com/dhaval-patil/Hostel-Addmission-System/tree/main/hostel",
-    live: "#",
+    github: "https://github.com/dhaval-patil/my-portfolio",
+    live: "https://dhaval-patill.netlify.app/",
   },
   {
     id: 3,
