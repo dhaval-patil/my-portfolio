@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { IoMdMail } from "react-icons/io";
 import { IoPhonePortraitOutline } from "react-icons/io5";
 import { ABOUT_ME } from "../utils/data";
 import ContactInfoCard from "../components/ContactInfoCard";
-import { MdOutlineWeb } from "react-icons/md";
 import emailjs from "emailjs-com";
 
 const ContactMe = () => {
@@ -51,11 +50,9 @@ const ContactMe = () => {
     <section id="contact">
       <div className="container mx-auto p-10">
         <div className="w-full lg:w-[60vw] mx-auto ">
-          <h4 className="text-zinc-300 text-center font-bold text-5xl">
-            Contact Me
-          </h4>
+          <h4 className=" font-text text-center text-6xl">Contact Me</h4>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 md:gap-16 mt-15">
+          <div className="grid grid-cols-1 md:grid-cols-2  md:gap-16 mt-15">
             <div>
               <ContactInfoCard icon={<IoMdMail />} text={ABOUT_ME.email} />
               <ContactInfoCard
@@ -65,11 +62,11 @@ const ContactMe = () => {
               {/* <ContactInfoCard icon={<MdOutlineWeb />} text={ABOUT_ME.website} /> */}
             </div>
             <div>
-              <h5 className="md:hidden text-zinc-300 text-lg font-medium mt-4 pb-5">
+              <h5 className="md:hidden font-text  text-zinc-300 text-lg font-medium mt-4 pb-5">
                 Contact Form
               </h5>
 
-              <form onSubmit={handleSubmit} className="flex flex-col">
+              <form onSubmit={handleSubmit} className="flex flex-col font-text">
                 <input
                   type="text"
                   name="name"
@@ -102,7 +99,10 @@ const ContactMe = () => {
                   className="input-box"
                   autoComplete="off"
                 />
-                <button type="submit" className="action-btn btn-scale-anim">
+                <button
+                  type="submit"
+                  className="action-btn text-[28px] btn-scale-anim"
+                >
                   SUBMIT
                 </button>
               </form>

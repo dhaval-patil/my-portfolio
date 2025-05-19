@@ -3,16 +3,9 @@ import PROFILE_PIC from "../assets/images/Profile_PIC.jpg";
 import { ABOUT_ME } from "../utils/data";
 
 const AboutMe = () => {
-  
   return (
-    <section
-      
-      id="about"
-      className="container mx-auto h-[90vh] px-20 py-16"
-      
-    >
-      <h4 className="block lg:hidden w-[200px] section-title text-left mb-16">
-        
+    <section id="about" className="container mx-auto h-[90vh] px-20 py-16">
+      <h4 className="block font-text lg:hidden w-[200px] section-title text-left mb-16">
         About Me
       </h4>
       <div className="flex flex-col lg:flex-row gap-16 items-start justify-between">

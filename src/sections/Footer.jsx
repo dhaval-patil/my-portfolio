@@ -77,8 +77,10 @@ const Footer = () => {
         </div>
         <div className="relative overflow-hidden w-full h-full flex justify-end px-12 text-right items-start py-12 text-white">
           <div className="flex justify-between w-full sm:text-lg md:text-xl">
-            <p className="text-white/60 text-sm">Last updated: 26-02-2025</p>
-            <ul>
+            <p className="text-white/60 font-text text-md">
+              Last updated: 15-05-2025
+            </p>
+            <ul className="font-text text-2xl">
               <li className="hover:underline cursor-pointer">
                 <a target="_blank" href="https://x.com/dhavalpatil8">
                   X
@@ -99,7 +101,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <h2 className="absolute bottom-0 left-0 translate-y-1/5 sm:text-[192px] text-[128px] text-white font-extrabold tracking-tighter">
+          <h2 className="absolute font-text1 bottom-0 left-0 translate-y-1/5 sm:text-[192px] text-[128px] text-white font-extrabold tracking-normal">
             DHAVAL
           </h2>
         </div>

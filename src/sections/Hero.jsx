@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import PROFILE_PIC from "../assets/images/Profile_PIC.jpg";
 import { Typewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
+import { ABOUT_ME } from "../utils/data";
+
 const Hero = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
@@ -16,69 +18,86 @@ const Hero = () => {
 
   return (
     <section
-      id="hero"
       {...(!isMobile && { "data-scroll": true, "data-scroll-speed": "-.6" })}
-      className="container h-[80vh] mx-auto px-8"
+      id="hero"
+      className="container mx-auto min-h-[80vh] flex flex-col sm:flex-col items-center justify-between gap-8"
     >
-      <div className="flex flex-col lg:flex-row gap-14 item-center justify-between mt-[80px]">
-        <div className="order-2 lg:order-1 text-center lg:text-left mt-16 lg:mt-0">
-          <h3 className="text-xl lg:text-2xl font-medium text-zinc-300">
-            👋 Hi, I'm{" "}
-            <span className="font-bold text-blue-600">Dhaval Patil, </span>
-            <span className="text-lg lg:text-xl font-bold text-zinc-100">
-              <Typewriter
-                words={[
-                  "Full Stack Developer",
-                  "MERN Stack Developer",
-                  "Software Developer",
-                ]}
-                loop={Infinity}
-                cursor
-                cursorStyle="|"
-                typeSpeed={80}
-                deleteSpeed={50}
-                delaySpeed={1000}
-              />
-            </span>
-          </h3>
-          <h1 className="w-full lg:w-[480px] text-4xl lg:text-5xl font-bold leading-[50px] lg:leading-[60px] mt-3 bg-gradient-to-r from-[#cfd0d6] to-[#717178] bg-clip-text text-transparent">
-            Building Scalable & User Centric Web Apps
-          </h1>
-
-          <p className="w-full text-zinc-300 lg:w-[500px] text-sm lg:text-base mt-4">
-            I’m a passionate Full Stack Web Developer crafting responsive,
-            accessible, and dynamic web experiences using React, Node.js, and
-            TailwindCSS.
-          </p>
-
-          <div className="flex justify-center lg:justify-start gap-4 md:gap-8 mt-6">
-            <a href="#projects">
-              <button className="cursor-pointer flex-1 md:flex-none action-btn-outline btn-scale-anim">
-                View My Work
-              </button>
-            </a>
+      <div className="flex justify-center space-x-15">
+        <div className="mt-30  left-10 ">
+          {ABOUT_ME.socialLinks.map((item) => (
             <a
-              href="https://drive.google.com/uc?export=download&id=12TD8rKrOjDQS_l2p_9_scwi7JZfHNsxG"
-              download
+              key={item.label}
+              href={item.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cursor-pointer group"
             >
-              <button className="cursor-pointer flex-1 md:flex-none action-btn btn-scale-anim">
-                Download Resume
-              </button>
+              <item.icon className="text-2xl my-4 text-[#f3f3f4] transition-transform duration-400 group-hover:rotate-12 group-hover:scale-180 group-hover:translate-y-[-2px] group-hover:text-[#8987ff] " />
             </a>
-          </div>
+          ))}
         </div>
+        <img
+          src={PROFILE_PIC}
+          alt="Profile Pic"
+          className="rounded-3xl hover:blur-[2px] hover:duration-300 ease-in-out profile-pic size-65 mt-[100px] "
+        />
 
-        <div className="w-[300px] md:w-[370px] h-[300px] md:h-[390px] bg-orange-100/50 rounded-3xl relative order-1 lg:order-2">
-          <img
-            src={PROFILE_PIC}
-            alt="Profile Pic"
-            className="rounded-3xl profile-pic"
-          />
+        <div className="flex flex-col lg:flex-row gap-14 item-center justify-between mt-[125px]">
+          <div className=" text-center lg:text-left mt-16 lg:mt-0">
+            <h3 className="text-xl lg:text-3xl font-text text-zinc-300">
+              👋 Hi, I'm{" "}
+              <span className="font-text  text-blue-600">Dhaval Patil, </span>
+              <span className="text-lg lg:text-3xl font-text  text-zinc-100">
+                <Typewriter
+                  words={[
+                    "Full Stack Developer",
+                    "MERN Developer",
+                    "Software Developer",
+                  ]}
+                  loop={Infinity}
+                  cursor
+                  cursorStyle="|"
+                  typeSpeed={80}
+                  deleteSpeed={50}
+                  delaySpeed={1000}
+                />
+              </span>
+            </h3>
+
+            <p className="w-full font-text text-zinc-300 lg:w-[500px] text-justify text-xl lg:text-xl mt-4">
+              I’m a passionate Full Stack Web Developer crafting responsive,
+              accessible, and dynamic web experiences using React, Node.js, and
+              TailwindCSS.
+            </p>
+
+            <div className="flex justify-center lg:justify-start gap-4 md:gap-8 mt-6">
+              <a
+                onClick={() => {
+                  document
+                    .getElementById("projects")
+                    .scrollIntoView({ behavior: "smooth" });
+                }}
+              >
+                <button className="font-text text-xl cursor-pointer flex-1 md:flex-none action-btn-outline btn-scale-anim">
+                  View My Work
+                </button>
+              </a>
+              <a
+                href="https://drive.google.com/file/d/1QPjAHKuChutPPv9i_BNqgS_bpS4HKcUw/view?usp=sharing"
+                target="_blank"
+                download
+              >
+                <button className="font-text text-xl cursor-pointer flex-1 md:flex-none action-btn btn-scale-anim">
+                  Download Resume
+                </button>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
 
       <motion.svg
-        className="w-full my-12"
+        className="w-full my-25"
         animate={{ y: [0, -20, 0] }} // Move up and down
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         onMouseEnter={() => setIsHovered(true)}

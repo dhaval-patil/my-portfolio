@@ -1,29 +1,4 @@
-import {
-  FaReact,
-  FaHtml5,
-  FaCss3,
-  FaInstagram,
-  FaLinkedin,
-  FaGithub,
-  FaMailBulk,
-} from "react-icons/fa";
-// import {
-//   BiLogoBootstrap,
-//   BiLogoFigma,
-//   BiLogoFirebase,
-//   BiLogoGit,
-//   BiLogoGithub,
-//   BiLogoJava,
-//   BiLogoJavascript,
-//   BiLogoMongodb,
-//   BiLogoNodejs,
-//   BiLogoPhp,
-//   BiLogoPostgresql,
-//   BiLogoPython,
-//   BiLogoTailwindCss,
-//   BiLogoVisualStudio,
-//   BiSolidSpeaker,
-// } from "react-icons/bi";
+import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 
 import ReactIcon from "../assets/icons/react.png";
 import NodeIcon from "../assets/icons/nodejs.png";
@@ -48,24 +23,16 @@ import VS from "../assets/icons/visual-studio-code.png";
 import FireBase from "../assets/icons/firebase.svg";
 import BootStrap from "../assets/icons/bootstrap-framework.png";
 
-import {
-  SiCanva,
-  SiEclipseadoptium,
-  SiExpress,
-  SiMongodb,
-  SiMysql,
-  SiWebpack,
-} from "react-icons/si";
-
-import { FaGitAlt, FaXTwitter, FaDribbble, FaMessage } from "react-icons/fa6";
-import { MdGroups3 } from "react-icons/md";
+import { FaXTwitter, FaMessage } from "react-icons/fa6";
 
 import PROJECT_IMG_1 from "../assets/images/project-1.png";
 import PROJECT_IMG_2 from "../assets/images/project-2.png";
+import PROJECT_IMG_3 from "../assets/images/project-3.png";
+import PROJECT_IMG_4 from "../assets/images/project-4.png";
 
 export const MENU_LINKS = [
-  { id: "01", label: "Home", offset: -100, to: "hero" },
-  { id: "02", label: "About Me", offset: -80, to: "about" },
+  { id: "01", label: "Home", offset: -600, to: "hero" },
+
   { id: "03", label: "Education", offset: -80, to: "education" },
   { id: "04", label: "Skills", offset: -80, to: "skills" },
   { id: "05", label: "Projects", offset: -80, to: "projects" },
@@ -332,6 +299,30 @@ export const PROJECTS = [
   // },
   {
     id: 2,
+    title: "RealTime ChatApp | QuickChat",
+    image: PROJECT_IMG_3,
+    tags: [
+      "React",
+      "Express.js",
+      "MongoDB",
+      "Node.js",
+      "Socket.io",
+      "Tailwind CSS",
+    ],
+    github: "https://github.com/dhaval-patil/QuickChat",
+    live: "https://quickchat-qv8k.onrender.com/",
+  },
+  {
+    id: 4,
+    title: "Personal Portfolio",
+    image: PROJECT_IMG_4,
+    tags: ["Reactjs", "TailwindCSS"],
+    github:
+      "https://github.com/dhaval-patil/Hostel-Addmission-System/tree/main/hostel",
+    live: "#",
+  },
+  {
+    id: 3,
     title: "Hostel Addmission System",
     image: PROJECT_IMG_2,
     tags: ["HTML", "CSS", "PHP", "MySql"],
@@ -347,7 +338,7 @@ export const EDUCATION = [
     degree: "Bachelor of Technology in Information Technology",
     institution: "ChanduBhai S Patel Institute of Technolgy",
     year: "2022 - 2025",
-    grade: "7.61 CGPA",
+    grade: "7.81 CGPA",
   },
   {
     id: 2,

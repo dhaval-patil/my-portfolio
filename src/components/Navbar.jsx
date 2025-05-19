@@ -31,13 +31,16 @@ const Navbar = () => {
   return (
     <>
       <nav className="container mx-auto sticky top-5 z-[999]">
-        <div className="flex item-center justify-between rounded-full   backdrop-blur-[10px] m-5 p-3 md:p-0">
+        <div className="flex item-center justify-between rounded-full  backdrop-blur-[10px] m-5 p-3 md:p-0">
           {/* Logo  */}
-          <img
+          <h1 className="font-text text-[30px] ml-6 my-2 -mb-2">
+            &lt; Dhaval /&gt;
+          </h1>
+          {/* <img
             className="h-7 ml-6 my-2 -mb-1 filter invert brightness-60"
             src={LOGO}
             alt="Logo"
-          />
+          /> */}
 
           {/* {Hamburger icon {visible only on small screen}} */}
           <button
@@ -70,10 +73,11 @@ const Navbar = () => {
           </button>
 
           {/* Navigation Links */}
+
           <ul
             className={`${
               isOpen ? "flex" : "hidden"
-            } menu-wrapper text-[20px] tracking-tighter text-zinc-300 font-bold`}
+            } menu-wrapper text-[20px] tracking-tighter text-zinc-300 `}
           >
             {MENU_LINKS.map((item) => (
               <li key={item.id}>
@@ -82,7 +86,7 @@ const Navbar = () => {
                   to={item.to}
                   smooth
                   offset={item.offset}
-                  className="menu-item"
+                  className="font-text text-[25px] tracking-wider menu-item"
                 >
                   {item.label}
                 </Link>
