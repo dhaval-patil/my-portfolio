@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import PROFILE_PIC from "../assets/images/Profile_PIC.jpg";
 import { Typewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
 import { ABOUT_ME } from "../utils/data";
 
-const Hero = () => {
+const Hero = ({ setCursorVariant }) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  const textEnter = () => setCursorVariant("text");
+  const textLeave = () => setCursorVariant("default");
 
   useEffect(() => {
     const handleResize = () => {
@@ -23,7 +26,11 @@ const Hero = () => {
       className="container mx-auto min-h-[80vh] flex flex-col sm:flex-col items-center justify-between gap-8"
     >
       <div className="flex justify-center space-x-15">
-        <div className="mt-30  left-10 ">
+        <div
+          onMouseEnter={textEnter}
+          onMouseLeave={textLeave}
+          className="mt-30  left-10 "
+        >
           {ABOUT_ME.socialLinks.map((item) => (
             <a
               key={item.label}
@@ -44,7 +51,11 @@ const Hero = () => {
 
         <div className="flex flex-col lg:flex-row gap-14 item-center justify-between mt-[125px]">
           <div className=" text-center lg:text-left mt-16 lg:mt-0">
-            <h3 className="text-xl lg:text-3xl font-text text-zinc-300">
+            <h3
+              onMouseEnter={textEnter}
+              onMouseLeave={textLeave}
+              className="text-xl lg:text-3xl font-text text-zinc-300"
+            >
               👋 Hi, I'm{" "}
               <span className="font-text  text-blue-600">Dhaval Patil, </span>
               <span className="text-lg lg:text-3xl font-text  text-zinc-100">
@@ -64,7 +75,11 @@ const Hero = () => {
               </span>
             </h3>
 
-            <p className="w-full font-text text-zinc-300 lg:w-[500px] text-justify text-xl lg:text-xl mt-4">
+            <p
+              onMouseEnter={textEnter}
+              onMouseLeave={textLeave}
+              className="w-full font-text text-zinc-300 lg:w-[500px] text-justify text-xl lg:text-xl mt-4"
+            >
               I’m a passionate Full Stack Web Developer crafting responsive,
               accessible, and dynamic web experiences using React, Node.js, and
               TailwindCSS.
@@ -78,7 +93,7 @@ const Hero = () => {
                     .scrollIntoView({ behavior: "smooth" });
                 }}
               >
-                <button className="font-text text-xl cursor-pointer flex-1 md:flex-none action-btn-outline btn-scale-anim">
+                <button className="font-text text-xl flex-1 md:flex-none action-btn-outline btn-scale-anim">
                   View My Work
                 </button>
               </a>
@@ -87,7 +102,7 @@ const Hero = () => {
                 target="_blank"
                 download
               >
-                <button className="font-text text-xl cursor-pointer flex-1 md:flex-none action-btn btn-scale-anim">
+                <button className="font-text text-xl flex-1 md:flex-none action-btn btn-scale-anim">
                   Download Resume
                 </button>
               </a>

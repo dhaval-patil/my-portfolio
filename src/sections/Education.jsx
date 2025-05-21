@@ -3,15 +3,23 @@ import { EDUCATION } from "../utils/data";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const Education = () => {
+const Education = ({ setCursorVariant }) => {
   useEffect(() => {
     AOS.init({ duration: 1000 });
     console.log(AOS);
   }, []);
+
+  const textEnter = () => setCursorVariant("text");
+  const textLeave = () => setCursorVariant("default");
+
   return (
     <section id="education" className="pb-20 mt-20">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-6xl font-text text-center tracking-wide mb-8">
+        <h2
+          onMouseEnter={textEnter}
+          onMouseLeave={textLeave}
+          className="text-6xl font-text text-center tracking-wide mb-8"
+        >
           Education
         </h2>
         <div className="space-y-6 font-text">

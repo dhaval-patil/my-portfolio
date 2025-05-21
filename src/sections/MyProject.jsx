@@ -1,7 +1,9 @@
 import { PROJECTS } from "../utils/data";
 import ProjectCard from "../components/ProjectCard";
 
-const MyProject = () => {
+const MyProject = ({ setCursorVariant }) => {
+  const textEnter = () => setCursorVariant("text");
+  const textLeave = () => setCursorVariant("default");
   return (
     <section
       id="projects"
@@ -9,7 +11,13 @@ const MyProject = () => {
     >
       <div className="container mx-auto px-8 md:px-10 py-10">
         <div className="w-full lg:w-[60vw] mx-auto">
-          <h4 className="font-text text-center text-[10vh]">Recent Projects</h4>
+          <h4
+            onMouseEnter={textEnter}
+            onMouseLeave={textLeave}
+            className="font-text text-center text-[10vh]"
+          >
+            Recent Projects
+          </h4>
 
           <p className="text-2xl font-text text-zinc-300 text-center mt-4 leading-6">
             From concept to deployment, these projects showcase my technical
@@ -32,6 +40,7 @@ const MyProject = () => {
                     tags={project.tags}
                     github={project.github}
                     live={project.live}
+                    setCursorVariant={setCursorVariant}
                   />
                 </div>
               ))}

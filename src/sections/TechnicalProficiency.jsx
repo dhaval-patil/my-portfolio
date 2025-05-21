@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const TechnicalProficiency = () => {
+const TechnicalProficiency = ({ setCursorVariant }) => {
   const [tabData, setTabData] = useState(SKILLS);
   const [activeTab, setActiveTab] = useState("all");
   useEffect(() => {
@@ -26,12 +26,18 @@ const TechnicalProficiency = () => {
     setTabData(updateList);
     setActiveTab(value);
   };
+  const textEnter = () => setCursorVariant("text");
+  const textLeave = () => setCursorVariant("default");
 
   return (
     <section id="skills" className="mt-3">
       <div className="container min-h-full mx-auto p-10">
         <div className="w-full lg:w-[60vw] mx-auto">
-          <h4 className="font-text text-zinc-300  text-center text-6xl">
+          <h4
+            onMouseEnter={textEnter}
+            onMouseLeave={textLeave}
+            className="font-text text-zinc-300  text-center text-6xl"
+          >
             Technical Skills
           </h4>
           <p className="font-text text-2xl text-center mt-4 leading-6">

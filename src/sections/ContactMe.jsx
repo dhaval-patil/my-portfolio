@@ -5,7 +5,7 @@ import { ABOUT_ME } from "../utils/data";
 import ContactInfoCard from "../components/ContactInfoCard";
 import emailjs from "emailjs-com";
 
-const ContactMe = () => {
+const ContactMe = ({ setCursorVariant }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -46,11 +46,19 @@ const ContactMe = () => {
       );
   };
 
+  const textEnter = () => setCursorVariant("text");
+  const textLeave = () => setCursorVariant("default");
   return (
     <section id="contact">
       <div className="container mx-auto p-10">
         <div className="w-full lg:w-[60vw] mx-auto ">
-          <h4 className=" font-text text-center text-6xl">Contact Me</h4>
+          <h4
+            onMouseEnter={textEnter}
+            onMouseLeave={textLeave}
+            className=" font-text text-center text-6xl"
+          >
+            Contact Me
+          </h4>
 
           <div className="grid grid-cols-1 md:grid-cols-2  md:gap-16 mt-15">
             <div>

@@ -1,9 +1,10 @@
 import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import "./about.css";
-const About = () => {
+const About = ({ setCursorVariant }) => {
   const { scrollYProgress } = useScroll(); // Track scroll progress
-
+  const textEnter = () => setCursorVariant("text");
+  const textLeave = () => setCursorVariant("default");
   // Scale text from 1 to 3 as you scroll
   const bgScale = useTransform(scrollYProgress, [0, 1], [1, 0.8]);
   const textScale = useTransform(scrollYProgress, [0, 0.5], [1, 3], [3, 5]);
@@ -14,6 +15,8 @@ const About = () => {
     >
       <div className="flex flex-col items-center justify-center gap-2 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
         <motion.div
+          onMouseEnter={textEnter}
+          onMouseLeave={textLeave}
           style={{ scale: textScale }}
           className="tracking-tighter text-nowrap flex gap-3 font-text text-2xl lg:text-5xl font-medium text-neutral-50"
         >

@@ -12,20 +12,13 @@ import CodingProfiles from "./sections/CodingProfiles";
 import LocomotiveScroll from "locomotive-scroll";
 
 import About from "./sections/About";
+import Cursor from "./sections/Cursor";
 
 const App = () => {
   const locomotiveScroll = new LocomotiveScroll();
   return (
     <div>
-      <BackToTop />
-      <Navbar />
-      <Hero />
-      <About />
-      <Education />
-      <TechnicalProficiency />
-      <MyProject />
-      <ContactMe />
-      <Footer />
+      <Cursor />
 
       {/* <CodingProfiles/> */}
     </div>

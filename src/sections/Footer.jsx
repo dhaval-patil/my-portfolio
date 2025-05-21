@@ -1,6 +1,8 @@
 import React from "react";
 import "./footer.css";
-const Footer = () => {
+const Footer = ({ setCursorVariant }) => {
+  const textEnter = () => setCursorVariant("text");
+  const textLeave = () => setCursorVariant("default");
   return (
     <footer className="w-full p-4 md:p-8 items-center justify-center h-full overflow-hidden z-30">
       <div
@@ -101,7 +103,11 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <h2 className="absolute font-text1 bottom-0 left-0 translate-y-1/5 sm:text-[192px] text-[128px] text-white font-extrabold tracking-normal">
+          <h2
+            onMouseEnter={textEnter}
+            onMouseLeave={textLeave}
+            className="absolute font-text1 bottom-0 left-0 translate-y-1/5 sm:text-[192px] text-[128px] text-white font-extrabold tracking-normal"
+          >
             DHAVAL
           </h2>
         </div>

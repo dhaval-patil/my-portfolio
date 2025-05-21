@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import LOGO from "../assets/images/logo.png";
 import { MENU_LINKS } from "../utils/data";
 import { Link } from "react-scroll";
 import "../taiwind.css";
-import { FaHamburger } from "react-icons/fa";
-const Navbar = () => {
+const Navbar = ({ setCursorVariant }) => {
   const [isOpen, setIsOpen] = useState(true);
+  const textEnter = () => setCursorVariant("text");
+  const textLeave = () => setCursorVariant("default");
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -33,7 +33,11 @@ const Navbar = () => {
       <nav className="container mx-auto sticky top-5 z-[999]">
         <div className="flex item-center justify-between rounded-full  backdrop-blur-[10px] m-5 p-3 md:p-0">
           {/* Logo  */}
-          <h1 className="font-text text-[30px] ml-6 my-2 -mb-2">
+          <h1
+            onMouseEnter={textEnter}
+            onMouseLeave={textLeave}
+            className="font-text text-[30px] ml-6 my-2 -mb-2"
+          >
             &lt; Dhaval /&gt;
           </h1>
           {/* <img

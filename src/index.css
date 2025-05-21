@@ -2,18 +2,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Jersey+15&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
 @import "tailwindcss";
-@font-face {
-  font-family: "Jersey 10";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/jersey10/v3/GftH7vZKsggXMf9n_J5n8Zjh-1w.woff2)
-    format("woff2");
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
-    U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
-    U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
+
 @layer base {
+  * {
+    cursor: none;
+  }
   html {
     font-family: "Jersey";
   }
@@ -22,6 +15,17 @@
     overflow-x: hidden;
     background-color: #0d1216;
     color: white;
+  }
+  .cursor {
+    background-color: #fcfcfc;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    pointer-events: none;
   }
 }
 
@@ -41,7 +45,7 @@
 
   .menu-item {
     @apply relative before:content-[""] before:absolute before:w-0 before:h-[3px] before:bg-blue-500 before:rounded-full
-    before:-bottom-1 before:left-0 before:transition-all before:duration-300 hover:before:w-full cursor-pointer;
+    before:-bottom-1 before:left-0 before:transition-all before:duration-300 hover:before:w-full;
   }
 
   .action-btn-outline {
