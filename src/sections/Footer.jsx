@@ -106,7 +106,7 @@ const Footer = ({ setCursorVariant }) => {
           <h2
             onMouseEnter={textEnter}
             onMouseLeave={textLeave}
-            className="absolute font-text1 bottom-0 left-0 translate-y-1/5 sm:text-[192px] text-[128px] text-white font-extrabold tracking-normal"
+            className="absolute font-text1 bottom-0 left-0 translate-y-1/5 lg:text-[192px] text-[72px] text-white font-extrabold tracking-normal"
           >
             DHAVAL
           </h2>

@@ -34,15 +34,15 @@ const ProjectCard = ({
             </span>
           ))}
         </div>
-        <div className="flex justify-center py-2  lg:space-x-25 ">
+        <div className="flex justify-center py-2 space-x-9  lg:space-x-25 ">
           <a href={github} target="_blank">
-            <button className="font-text text-3xl action-btn translate-y-3 hover:scale-105 duration-300 ease-in-out rounded-md border-b-2 border-r-1 px-15">
+            <button className="font-text text-xl lg:text-3xl action-btn translate-y-3 hover:scale-105 duration-300 ease-in-out rounded-md border-b-2 border-r-1 px-8 lg:px-15">
               GITHUB
             </button>
           </a>
 
           <a href={live} target="_blank">
-            <button className="font-text text-3xl action-btn translate-y-3 hover:scale-105 duration-300 ease-in-out  rounded-md border-b-2 border-r-1 px-15">
+            <button className="font-text text-xl lg:text-3xl action-btn translate-y-3 hover:scale-105 duration-300 ease-in-out  rounded-md border-b-2 border-r-1 px-8 lg:px-15">
               LIVE
             </button>
           </a>

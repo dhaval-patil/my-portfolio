@@ -5,31 +5,20 @@ import { motion } from "framer-motion";
 import { ABOUT_ME } from "../utils/data";
 
 const Hero = ({ setCursorVariant }) => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-
   const textEnter = () => setCursorVariant("text");
   const textLeave = () => setCursorVariant("default");
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
   return (
     <section
-      {...(!isMobile && { "data-scroll": true, "data-scroll-speed": "-.6" })}
+      {...{ "data-scroll": true, "data-scroll-speed": "-.6" }}
       id="hero"
-      className="container mx-auto min-h-[80vh] flex flex-col sm:flex-col items-center justify-between gap-8"
+      className="container mx-auto min-h-[80vh] sm:px-8 flex flex-col items-center justify-between gap-8"
     >
-      <div className="flex justify-center space-x-15">
+      <div className="flex flex-col lg:flex-row justify-center lg:space-x-10">
         <div
           onMouseEnter={textEnter}
           onMouseLeave={textLeave}
-          className="mt-30  left-10 "
+          className="flex flex-row lg:flex-col gap-4 lg:-space-y-8 justify-center mt-1 lg:mt-30"
         >
           {ABOUT_ME.socialLinks.map((item) => (
             <a
@@ -37,24 +26,25 @@ const Hero = ({ setCursorVariant }) => {
               href={item.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="cursor-pointer group"
+              className=" group"
             >
               <item.icon className="text-2xl my-4 text-[#f3f3f4] transition-transform duration-400 group-hover:rotate-12 group-hover:scale-180 group-hover:translate-y-[-2px] group-hover:text-[#8987ff] " />
             </a>
           ))}
         </div>
+
         <img
           src={PROFILE_PIC}
           alt="Profile Pic"
-          className="rounded-3xl hover:blur-[2px] hover:duration-300 ease-in-out profile-pic size-65 mt-[100px] "
+          className="rounded-3xl hover:blur-[2px] hover:duration-300 ease-in-out profile-pic size-65 mx-auto lg:mt-[100px]"
         />
 
-        <div className="flex flex-col lg:flex-row gap-14 item-center justify-between mt-[125px]">
-          <div className=" text-center lg:text-left mt-16 lg:mt-0">
+        <div className="lg:mx-9 flex flex-col sm:text-center items-center  gap-14 item-center justify-between lg:mt-[125px]">
+          <div className=" text-center mx-2 lg:text-left mt-3 lg:mt-0">
             <h3
               onMouseEnter={textEnter}
               onMouseLeave={textLeave}
-              className="text-xl lg:text-3xl font-text text-zinc-300"
+              className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-text text-zinc-300"
             >
               👋 Hi, I'm{" "}
               <span className="font-text  text-blue-600">Dhaval Patil, </span>
@@ -78,14 +68,14 @@ const Hero = ({ setCursorVariant }) => {
             <p
               onMouseEnter={textEnter}
               onMouseLeave={textLeave}
-              className="w-full font-text text-zinc-300 lg:w-[500px] text-justify text-xl lg:text-xl mt-4"
+              className="w-full font-text text-zinc-300 lg:w-[500px] text-justify text-base  sm:text-lg lg:text-xl mt-4"
             >
               I’m a passionate Full Stack Web Developer crafting responsive,
               accessible, and dynamic web experiences using React, Node.js, and
               TailwindCSS.
             </p>
 
-            <div className="flex justify-center lg:justify-start gap-4 md:gap-8 mt-6">
+            <div className="flex justify-center lg:justify-start gap-4 md:gap-8 mt-6 sm:w-auto">
               <a
                 onClick={() => {
                   document
@@ -93,7 +83,7 @@ const Hero = ({ setCursorVariant }) => {
                     .scrollIntoView({ behavior: "smooth" });
                 }}
               >
-                <button className="font-text text-xl flex-1 md:flex-none action-btn-outline btn-scale-anim">
+                <button className="font-text text-lg sm:text-xl flex-1 md:flex-none action-btn-outline btn-scale-anim">
                   View My Work
                 </button>
               </a>
@@ -102,7 +92,7 @@ const Hero = ({ setCursorVariant }) => {
                 target="_blank"
                 download
               >
-                <button className="font-text text-xl flex-1 md:flex-none action-btn btn-scale-anim">
+                <button className="font-text text-lg sm:text-xl flex-1 md:flex-none action-btn btn-scale-anim">
                   Download Resume
                 </button>
               </a>

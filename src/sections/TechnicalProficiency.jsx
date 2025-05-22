@@ -3,16 +3,10 @@ import { SKILL_TABS, SKILLS } from "../utils/data";
 import Tabs from "../components/Tabs";
 import SkillCard from "../components/SkillCard";
 import { motion } from "framer-motion";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 const TechnicalProficiency = ({ setCursorVariant }) => {
   const [tabData, setTabData] = useState(SKILLS);
   const [activeTab, setActiveTab] = useState("all");
-  useEffect(() => {
-    AOS.init({ duration: 1000 });
-    console.log(AOS);
-  }, []);
 
   const handleValueChange = (value) => {
     if (value === "all") {
@@ -52,10 +46,7 @@ const TechnicalProficiency = ({ setCursorVariant }) => {
           onChange={handleValueChange}
         />
 
-        <div
-          data-aos="flip-up"
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 min-h-[100px] justify-center items-center mx-30"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 min-h-[100px] justify-center items-center lg:mx-30">
           {tabData.map((skill, index) => (
             <motion.div
               key={skill.id}
